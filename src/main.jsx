@@ -8,35 +8,44 @@ import SingleProduct from './pages/SingleProduct.jsx';
 import About from './pages/About.jsx';
 import Products from './pages/products.jsx';
 import ProductList from './pages/productList.jsx';
+import Layout from './components/Layout.jsx';
 
-const router = createBrowserRouter([
-  {
-    path:'/',
-    element: <Login/>
-  },
-  {
-    path:'/home',
-    element: <Home/>
-  },
-  {
-    path: "/products",
-    element: <Products/>,
-    children:[
-        {
-            path:"",
-            element: <ProductList/>
-        },
-        {
-            path:":id",
-            element: <SingleProduct/>
-        }
-    ]
-},
-  {
-    path:'/about',
-    element: <About/>
-  }
-])
+const router = createBrowserRouter(
+  [
+      {
+          path: "/",
+          element: <Login/>,
+      },
+      {
+          path: "/",
+          element: <Layout/>,
+          children: [
+              {
+                  path: "/home",
+                  element: <Home/>
+              },
+              {
+                  path: "/about",
+                  element: <About/>
+              },
+              {
+                  path: "/products",
+                  element: <Products/>,
+                  children: [
+                      {
+                          path: "",
+                          element: <ProductList/>
+                      },
+                      {
+                          path: ":id",
+                          element: <SingleProduct/>
+                      }
+                  ]
+              }
+          ]
+      },
+  ]
+)
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
