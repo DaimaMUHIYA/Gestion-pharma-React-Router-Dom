@@ -1,7 +1,7 @@
 const Home = () => {
     return (
         <>
-            <h1>Welcome to Gestion Pharma</h1>
+            <h1>Bienvenu(e) à Gestion Pharma</h1>
         </>
     );
 }

@@ -2,9 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import Login from './pages/login.jsx';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Home from './pages/home.jsx';
+import SingleProduct from './pages/SingleProduct.jsx';
+import About from './pages/About.jsx';
 import Products from './pages/products.jsx';
 import ProductList from './pages/productList.jsx';
-import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 
 const router = createBrowserRouter([
   {
@@ -13,9 +16,7 @@ const router = createBrowserRouter([
   },
   {
     path:'/home',
-    element: <>
-        <div><h1>Accueil</h1></div>
-    </>
+    element: <Home/>
   },
   {
     path: "/products",
@@ -27,20 +28,13 @@ const router = createBrowserRouter([
         },
         {
             path:":id",
-            element: <h1>Single Product</h1>
+            element: <SingleProduct/>
         }
     ]
-},{
-    path:'/singleProduct',
-    element: <>
-        <div><h1>Produit</h1></div>
-    </>
-  },
+},
   {
     path:'/about',
-    element: <>
-        <div><h1>A propos</h1></div>
-    </>
+    element: <About/>
   }
 ])
 
