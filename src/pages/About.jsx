@@ -1,10 +1,8 @@
 
-
-function About() {
+const About = () => {
     return (
         <>
-        <h1>A propos de nous</h1>
-        <p>Ceci est une application de gestion de produits pharmaceutiques</p>
+            <h1>Ceci est une application de gestion des produits pharmaceutique</h1>
         </>
     );
 }

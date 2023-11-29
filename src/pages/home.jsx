@@ -1,9 +1,7 @@
-
-
-function Home() {
+const Home = () => {
     return (
         <>
-            <h1>Welcome to Gestion-Pharma App </h1>
+            <h1>Welcome to Gestion Pharma</h1>
         </>
     );
 }

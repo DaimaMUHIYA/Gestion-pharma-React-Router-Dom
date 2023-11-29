@@ -1,21 +1,19 @@
-import ProductPreview from "../components/productPreview";
+import ProductPreview from "../components/productPreview.jsx";
 import ProductService from "../models/services/productService.js";
-
-function ProductionList() {
-    const data = ProductService.getProducts();
-    return (
-        <>
-            <ul>
-                {
-                    data.map((e) =>
-                    <li>
-                        <ProductPreview product ={e} seeMOre ={false}></ProductPreview>
-                    </li>
-                    )
-                }
-            </ul>
-        </>
-    );
+function ProductsList() {
+   const data = ProductService.getProducts();
+   return (
+       <>
+           <ul>
+               {
+                   data.map((e) =>
+                       <li key={e.id}>
+                           <ProductPreview product={e} seeMore={false}></ProductPreview>
+                       </li>
+                   )
+               }
+           </ul>
+       </>
+   );
 }
-
 export default ProductsList;

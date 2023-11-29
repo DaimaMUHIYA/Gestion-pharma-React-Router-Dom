@@ -1,24 +1,18 @@
-import { useNavigate} from "react-router-dom";
+import {useNavigate} from 'react-router-dom';
 
-function Login() {
+
+const Login = () => {
     const navigate = useNavigate();
-    const handleClick = (path) => {
+    const handleClick = (path)=>{
         navigate(path);
-    }
 
+    }
     return (
         <>
-        
             <h1>Login Page</h1>
-
-            <button onClick={()=>handleClick('/home')}>
-                Se connecter
-            </button>
-
-            <button onClick={()=>handleClick('/products')}>
-                produits
-            </button>
-
+            <button onClick={()=>handleClick('/home')}>Se Connecter</button>
+            <button onClick={()=>handleClick('/products')}>Produits</button>
+            
         </>
     );
 }
